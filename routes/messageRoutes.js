@@ -6,14 +6,14 @@ var Message = require("../models/messageSchema");
 
 messageRoutes.route("/")
     .get(function (req, res) {
-        Message.find({$or: [{user_id: req.user._id}]}, function (err, messages) {
+        Message.find({user_id: req.user._id}, function (err, messages) {
             if (err) return res.status(500).send(err);
             res.send(messages)
         })
     })
     .post(function (req, res) {
         var newMessage = new Message(req.body);
-        newMessage.user._id = req.user._id;
+        newMessage.user_id = req.user._id;
         newMessage.save(function (err, createdMessage) {
             if (err) return res.status(500).send(err);
             return res.status(201).send(createdMessage)
@@ -34,9 +34,9 @@ messageRoutes.route("/:id")
         })
     })
     .delete(function (req, res) {
-        Todo.findOneAndRemove({user_id: req.user._id, _id: req.params.id}, function (err, todo) {
+        Message.findOneAndRemove({user_id: req.user._id, _id: req.params.id}, function (err, deletedMessage) {
             if (err) return res.status(500).send(err);
-            res.send(todo)
+            res.send(deletedMessage)
         })
     });
 
