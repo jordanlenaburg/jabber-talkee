@@ -2,7 +2,7 @@ var express = require("express");
 var messageRoutes = express.Router();
 var Message = require("../models/messageSchema");
 
-//add channel info to messages
+//add channel info to messages will be done in angular
 
 messageRoutes.route("/")
     .get(function (req, res) {
