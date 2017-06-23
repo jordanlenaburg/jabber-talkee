@@ -5,8 +5,10 @@ var bodyParser = require("body-parser");
 var expressJwt = require("express-jwt");
 var port = process.env.PORT || 8000;
 var config = require("./config");
-
 var app = express();
+var path = require("path");
+
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/account", expressJwt({secret: config.secret}));
 app.use(morgan("dev"));
