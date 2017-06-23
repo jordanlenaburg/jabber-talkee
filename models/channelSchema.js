@@ -5,21 +5,17 @@
 //Timestamp?
 
 var mongoose = require("mongoose");
-var Schema = new mongoose.Schema;
+var Schema = mongoose.Schema;
 
 var channelSchema = new Schema({
-    createdByUser_id: {
+    user_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
         required: true
     },
     public: Boolean,
     topic: String,
-    usersInChannel_id: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-        required: true
-    }]
+    usersInChannel: [String]
 });
 
 module.exports = mongoose.model("Channel", channelSchema);
