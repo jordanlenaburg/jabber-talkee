@@ -1,16 +1,16 @@
 var app = angular.module("JabberTalkee", ["ngRoute"]);
 
 
-app.controller("chatCtrl", function(){
+app.controller("chatCtrl", ["$scope", function($scope){
 
 
 
-})
+}])
 
 
 
-app.controller("channelCtrl", function(){
+app.controller("channelCtrl", ["$scope", function($scope){
 
 
 
-})
+}])
