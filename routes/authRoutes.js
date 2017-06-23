@@ -24,7 +24,7 @@ authRoutes.post("/signup", function (req, res) {
 });
 
 authRoutes.post("/login", function (req, res) {
-    User.findOne({username: req.body.username.toLowerCase()}, function (err, existingUser) {
+    User.findOne({email: req.body.email.toLowerCase()}, function (err, existingUser) {
         if (err) return res.status(500).send(err);
         if (!existingUser || existingUser.password !== req.body.password) {
             return res.status(401).send({success: false, message: "Email or password is incorrect"})

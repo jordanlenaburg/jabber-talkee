@@ -5,7 +5,7 @@ angular.module("JabberTalkee")
         return {
             templateUrl: "components/navbar/navbar.html",
             restrict: "E",
-            controller: "channelCtrl"
+            // controller: "channelCtrl"
         }
     })
 

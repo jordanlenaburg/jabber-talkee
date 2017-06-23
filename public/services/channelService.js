@@ -12,5 +12,21 @@ angular.module("JabberTalkee")
                     alert("Error " + response.status + ": " + response.statusText)
                 }
             )
+    };
+    this.createChannel = function () {
+        return $http.post("/account/channel")
+            .then(
+                function (response) {
+                    console.log(response);
+                    return response
+                },
+                function (response) {
+                    alert("Error " + response.status + ": " + response.statusText)
+                }
+            )
+    };
+    this.setTopic = function () {
+        return $http.put("/account/channel/" + req.params.id)
+
     }
 }]);
