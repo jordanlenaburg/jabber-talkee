@@ -12,7 +12,7 @@ app.config(["$routeProvider", function($routeProvider){
             // controller: "channelCtrl"
         })
         .otherwise({
-            redirectTo: ""
+            redirectTo: "/chat"
         })
 
 
