@@ -3,17 +3,21 @@ var app = angular.module("JabberTalkee", ["ngRoute"]);
 app.config(["$routeProvider", function($routeProvider){
 
     $routeProvider
+        .when("/home", {
+            templateUrl: "components/home/home.html",
+            // controller: ""
+        })
         .when("/chat", {
             templateUrl: "",
             controller: "chatCtrl"
         })
         .when("/channel", {
             templateUrl: "",
-            // controller: "channelCtrl"
+            controller: "channelCtrl"
         })
-        .otherwise({
-            redirectTo: "/chat"
-        })
+        // .otherwise({
+        //     redirectTo: "/home"
+        // })
 
 
 
@@ -23,8 +27,3 @@ app.config(["$routeProvider", function($routeProvider){
 
 
 
-app.controller("channelCtrl", function(){
-
-
-
-})

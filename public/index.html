@@ -7,8 +7,8 @@
     <title>JabberTalkee</title>
 </head>
 <body>
-<navbar></navbar>
 <section class="content">
+    <navbar></navbar>
     <ng-view></ng-view>
     <footer></footer>
 </section>
@@ -20,6 +20,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.10/ngStorage.min.js"></script>
 <!--App-->
 <script src="app.js"></script>
 <!--Routes-->
@@ -27,6 +28,8 @@
 <script src="routes/channelRoute.js"></script>
 <!--Directives-->
 <script src="directives/directives.js"></script>
+<!--Services-->
+<script src="components/navbar/channel.js"></script>
 <!--Auth-->
 <script src="components/auth/auth.js"></script>
 <script src="components/auth/signup/signup.js"></script>

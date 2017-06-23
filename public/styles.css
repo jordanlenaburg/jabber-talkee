@@ -5,6 +5,10 @@ body {
     background-repeat: repeat;
 }
 
+nav {
+    width: 200px;
+}
+
 .foot {
     position: absolute;
     background-color: black;
