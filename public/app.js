@@ -13,7 +13,7 @@ app.config(["$routeProvider", function ($routeProvider) {
         })
         .when("/channel", {
             template: "",
-            controller: "channelCtrl"
+            // controller: "channelCtrl"
         })
     // .otherwise({
     //     redirectTo: "/home"

@@ -13,6 +13,14 @@ angular.module("JabberTalkee")
                 }
             )
     };
+    this.getOneChannel = function () {
+        return $http.get("/account/channel/" + req.params.id)
+            .then(
+                function (response) {
+                    return response
+                }
+            )
+    };
     this.createChannel = function () {
         return $http.post("/account/channel")
             .then(
@@ -25,8 +33,26 @@ angular.module("JabberTalkee")
                 }
             )
     };
-    this.setTopic = function () {
+    this.updateChannel = function () {
         return $http.put("/account/channel/" + req.params.id)
-
+            .then(
+                function (response) {
+                    return response
+                },
+                function (response) {
+                    alert("Error " + response.status + ": " + response.statusText)
+                }
+            )
+    };
+    this.deleteChannel = function () {
+        return $http.delete("/account/channel/" + req.params.id)
+            .then(
+                function (response) {
+                    return response
+                },
+                function (response) {
+                    alert("Error " + response.status + ": " + response.statusText)
+                }
+            )
     }
 }]);

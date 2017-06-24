@@ -1,6 +1,11 @@
 <nav class="navbar-inverse navbar-left">
         <ul class="nav nav-stacked">
-            <li role="presentation"><a href='#!/home'>Home</a></li>
-            <li role="presentation"><a href='#!/make-channel'>Create a channel</a></li>
+            <li role="presentation" class="text-center"><a href='#!/home'>Home</a></li>
+            <li role="presentation" class="text-center">
+                <a ng-click="createChannel(channelName)">Create a channel</a>
+                <input type="text" placeholder="Channel Name" ng-model="channelName" class="text-center">
+            </li>
+            <li role="presentation" class="text-center" ng-repeat="channel in channelList"><a href='#!/account/channel/{{ channel._id }}'>{{ channel.topic }}</a></li>
+
         </ul>
 </nav>
