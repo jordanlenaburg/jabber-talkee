@@ -1,8 +1,6 @@
-
-//TODO: pass in channel topic
 angular.module("JabberTalkee")
 
-    .controller("navCtrl", ["$scope", "channelService", function ($scope, channelService) {
+    .controller("navCtrl", ["$scope", "$routeParams", "channelService", function ($scope, $routeParams, channelService) {
         $scope.channelList = [];
         $scope.createChannel = function (channel) {
             if (!channel){
@@ -12,6 +10,12 @@ angular.module("JabberTalkee")
             channelService.createChannel(channel)
                 .then(
                     function (response) {
+                        return channelService.getRequest()
+                    }
+                )
+                .then(
+                    function (response) {
+                        $scope.channelList = response;
                         return response
                     }
                 );
@@ -20,10 +24,9 @@ angular.module("JabberTalkee")
             .then(
                 function (response) {
                     $scope.channelList = response;
-                    console.log($scope.channelList);
+                    // console.log($scope.channelList);
                     return response
                 }
             )
-
     }])
 ;

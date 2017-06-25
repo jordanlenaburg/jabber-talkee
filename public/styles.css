@@ -13,6 +13,9 @@ nav {
 
 .box {
     border: solid 2px black;
+    width: 99%;
+    height: 85vh;
+
 }
 
 .foot {

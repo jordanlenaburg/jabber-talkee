@@ -21,11 +21,11 @@ angular.module("JabberTalkee")
                 }
             )
     };
-    this.createChannel = function () {
-        return $http.post("/account/channel")
+    this.createChannel = function (channel) {
+        return $http.post("/account/channel", channel)
             .then(
                 function (response) {
-                    console.log(response);
+                    // console.log(response);
                     return response
                 },
                 function (response) {

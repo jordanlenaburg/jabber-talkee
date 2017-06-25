@@ -11,8 +11,8 @@ app.config(["$routeProvider", function ($routeProvider) {
             templateUrl: "",
             controller: "chatCtrl"
         })
-        .when("/channel/:id", {
-            templateUrl: "/components/channel/channel.html",
+        .when("/account/channel/:id", {
+            templateUrl: "/components/channel/channel.html"
             // controller: "channelCtrl"
         })
     // .otherwise({

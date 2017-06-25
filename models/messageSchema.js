@@ -15,12 +15,10 @@ var messageSchema = new Schema({
         ref: "User",
         required: true
     },
-    // channel_id: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: "Channel",
-    //     required: true
-    //     // if channel is private, all people are considered direct recipients
-    // },
+    channel_id: {
+        type: String,
+        // required: true
+    },
     application: String,
     // directRecipients_id: [{
     //     type: mongoose.Schema.Types.ObjectId,
