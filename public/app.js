@@ -12,14 +12,12 @@ app.config(["$routeProvider", function ($routeProvider) {
             controller: "chatCtrl"
         })
         .when("/account/channel/:id", {
-            templateUrl: "/components/channel/channel.html"
-            // controller: "channelCtrl"
+            templateUrl: "/components/channel/channel.html",
+            controller: "channelCtrl"
         })
-    // .otherwise({
-    //     redirectTo: "/home"
-    // })
-
-
+        .otherwise({
+            redirectTo: "/home"
+        })
 }]);
 
 
