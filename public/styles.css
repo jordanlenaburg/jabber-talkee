@@ -5,6 +5,19 @@ body {
     background-repeat: repeat;
 }
 
+nav {
+    width: 15%;
+    height: 100vh;
+    overflow: scroll;
+}
+
+.box {
+    border: solid 2px black;
+    width: 99%;
+    height: 85vh;
+
+}
+
 .foot {
     position: absolute;
     background-color: black;
@@ -14,10 +27,29 @@ body {
     height: 25px;
 }
 
+.message-input {
+    position: absolute;
+    width: 83%;
+    bottom: 30px;
+    right: 30px;
+    border: solid 2px black;
+}
+
+.messages {
+    margin-top: 10px;
+    width: 100%;
+    resize: none;
+}
+
+.btn {
+    margin-top: 10px;
+}
+
 .text-white {
     color: ghostwhite;
 }
 
 .content {
-    min-height: calc(100vh - 40px);
+    position: relative;
+    min-height: calc(100vh - 0px);
 }

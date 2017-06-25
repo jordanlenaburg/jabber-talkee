@@ -1,17 +1,26 @@
-var app = angular.module("JabberTalkee");
+angular.module("JabberTalkee")
 
-app.directive("navbar", function () {
+    .directive("messageInput", function () {
 
-    return {
-        templateUrl: "components/navbar/navbar.html",
-        restrict: "E"
-    }
-})
+        return {
+            templateUrl: "directives/message-input/message-input.html",
+            restrict: "E",
+            controller: "messageCtrl"
+        }
+    })
+    .directive("navbar", function () {
 
-app.directive("footer", function () {
+        return {
+            templateUrl: "directives/navbar/navbar.html",
+            restrict: "E",
+            controller: "navCtrl"
+        }
+    })
 
-    return {
-        templateUrl: "components/navbar/footer.html",
-        restrict: "E"
-    }
-})
+    .directive("footer", function () {
+
+        return {
+            templateUrl: "directives/navbar/footer.html",
+            restrict: "E"
+        }
+    });

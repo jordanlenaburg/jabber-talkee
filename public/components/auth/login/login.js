@@ -4,7 +4,7 @@ angular.module("Auth")
 
         $scope.login = function (user) {
             UserService.login(user).then(function (response) {
-                $location.path("/channels");
+                $location.path("/channel");
             }, function (response) {
                 alert(response.data.message);
             });
