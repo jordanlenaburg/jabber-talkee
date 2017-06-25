@@ -5,6 +5,6 @@
                 <a href="#" ng-click="createChannel(channel)">Create a channel</a>
                 <input type="text" placeholder="Channel Topic" ng-model="channel.topic" class="text-center">
             </li>
-            <li role="presentation" class="text-center" ng-repeat="channel in channelList"><a href='#!/account/channel/{{ channel._id }}'>{{ channel.topic }}</a></li>
+            <li role="presentation" class="text-center" ng-repeat="channel in channelList"><a href='#!/account/channel/{{ channel._id }}' ng-click="setChannel(channel._id)">{{ channel.topic }}</a></li>
         </ul>
 </nav>

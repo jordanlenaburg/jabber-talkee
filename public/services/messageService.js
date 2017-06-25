@@ -14,4 +14,10 @@ angular.module("JabberTalkee")
                     }
                 )
         };
+        this.getMessages = function (channel) {
+            params = {
+                channel_id: channel
+            };
+            return $http.get("/account/message")
+        }
     }]);

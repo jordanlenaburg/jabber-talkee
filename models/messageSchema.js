@@ -17,7 +17,7 @@ var messageSchema = new Schema({
     },
     channel_id: {
         type: String,
-        // required: true
+        required: true
     },
     application: String,
     // directRecipients_id: [{
