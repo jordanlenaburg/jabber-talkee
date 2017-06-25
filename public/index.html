@@ -9,7 +9,10 @@
 <body>
 <section class="content">
     <navbar></navbar>
-    <ng-view></ng-view>
+    <div class="box">
+        <ng-view></ng-view>
+    </div>
+    <message-input></message-input>
     <footer></footer>
 </section>
 
@@ -17,16 +20,17 @@
 <!--3rd Party-->
 <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
         crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.10/ngStorage.min.js"></script>
 <!--App-->
 <script src="app.js"></script>
 <!--Components-->
-<script src="components/navbar/channel.js"></script>
+
 <!--Directives-->
 <script src="directives/directives.js"></script>
+<script src="directives/navbar/nav.js"></script>
 <!--Services-->
 <script src="services/channelService.js"></script>
 
