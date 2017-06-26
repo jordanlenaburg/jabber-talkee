@@ -4,7 +4,7 @@ angular.module("JabberTalkee")
         $scope.channelList = [];
         $scope.setChannel = function (channel_id) {
           $scope.channel_id = channel_id;
-          console.log(channel_id)
+          // console.log(channel_id)
         };
         $scope.createChannel = function (channel) {
             if (!channel){
