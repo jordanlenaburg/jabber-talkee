@@ -1,9 +1,11 @@
 <nav class="navbar-inverse navbar-left">
         <ul class="nav nav-stacked">
             <li role="presentation" class="text-center"><a href='#!/home'>Home</a></li>
-            <li role="presentation" class="text-center">
-                <a href="#" ng-click="createChannel(channel)">Create a channel</a>
-                <input type="text" placeholder="Channel Topic" ng-model="channel.topic" class="text-center">
+            <li role="presentation" class="text-center channel-create">
+                <input type="text" placeholder="Channel Topic" ng-model="channel.topic" class="text-center"><br>
+                <input type="radio" ng-model="channel.public" value="true"> Public
+                <input type="radio" ng-model="channel.public" value="false"> Private
+                <button class="btn btn-info" ng-click="createChannel(channel)">Create a channel</button>
             </li>
             <li role="presentation" class="text-center" ng-repeat="channel in channelList"><a href='#!/account/channel/{{ channel._id }}' ng-click="setChannel(channel._id)">{{ channel.topic }}</a></li>
         </ul>

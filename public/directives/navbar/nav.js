@@ -7,13 +7,18 @@ angular.module("JabberTalkee")
           // console.log(channel_id)
         };
         $scope.createChannel = function (channel) {
-            if (!channel){
+            if (!channel.topic){
                 alert("Please provide a channel topic");
+                return;
+            }
+            if (!channel.public){
+                alert("Is this channel public or private?");
                 return;
             }
             channelService.createChannel(channel)
                 .then(
                     function (response) {
+                        channel = {};
                         return channelService.getRequest()
                     }
                 )

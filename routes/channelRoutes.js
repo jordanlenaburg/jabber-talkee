@@ -7,10 +7,11 @@ var Channel = require("../models/channelSchema");
 
 channelRoutes.route("/")
     .get(function (req, res) {
-        Channel.find({user_id: req.user._id}, function (err, channels) {
+        var config = usersInChannel.indexOf(req.user._id) !== -1;
+        Channel.find({user_id: req.user._id || config}, function (err, channels) {
             if (err) return res.status(500).send(err);
             res.send(channels)
-        })
+        });
     })
     .post(function (req, res) {
         var newChannel = new Channel(req.body);
