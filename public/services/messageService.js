@@ -4,7 +4,7 @@ angular.module("JabberTalkee")
             return $http.post("/account/message", message)
                 .then(
                     function (response) {
-                        console.log(response);
+                        // console.log(response);
                         return response
                     },
                     function (response) {
@@ -18,11 +18,11 @@ angular.module("JabberTalkee")
                     channel_id: channel
                 }
             };
-            console.log(config)
+            // console.log(config);
             return $http.get("/account/message", config)
                 .then(
                     function (response) {
-                        console.log(response);
+                        // console.log(response);
                         return response
                     },
                     function (response) {
