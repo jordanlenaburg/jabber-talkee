@@ -1,4 +1,4 @@
-var app = angular.module("JabberTalkee", ["ngRoute", "Auth"]);
+var app = angular.module("JabberTalkee", ["ngRoute", "Auth","ngToast"]);
 
 app.config(["$routeProvider", function ($routeProvider) {
 
