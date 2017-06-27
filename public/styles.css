@@ -3,7 +3,9 @@ body {
     height: 100%;
     margin: auto;
     background-repeat: repeat;
+    color: ##33a6cc;
 }
+
 
 nav {
     width: 15%;
@@ -16,11 +18,12 @@ nav {
 }
 
 .channel-create {
-    background-color: ghostwhite;
+    background-color: #222;
+    color: #337ab7;
 }
 
 .box {
-    border: solid 2px black;
+    /*border: solid 2px black;*/
     width: 99%;
     height: 85vh;
 
@@ -40,7 +43,7 @@ nav {
     width: 83%;
     bottom: 30px;
     right: 30px;
-    border: solid 2px black;
+    /*border: solid 2px black;*/
 }
 
 .messages {
@@ -50,8 +53,18 @@ nav {
 }
 
 .btn {
-    margin-top: 10px;
+    padding: 10px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+
+
 
 .text-white {
     color: ghostwhite;
@@ -60,4 +73,82 @@ nav {
 .content {
     position: relative;
     min-height: calc(100vh - 0px);
+}
+
+.btn-send {
+    margin-top: 12px;
+}
+
+.radioNav {
+    margin-top:5px;
+    margin-bottom: 5px;
+}
+
+.btn-primary {
+    background: #0099cc;
+    color: #ffffff;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #33a6cc;
+}
+
+.btn-primary:active, .btn-primary.active {
+    background: #007299;
+    box-shadow: none;
+}
+
+.btn-primary.gradient {
+    background: -moz-linear-gradient(top,  #33a6cc 50%, #0099cc 50%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#33a6cc), color-stop(50%,#0099cc)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #33a6cc 50%,#0099cc 50%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #33a6cc 50%,#0099cc 50%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #33a6cc 50%,#0099cc 50%); /* IE10+ */
+    background: linear-gradient(to bottom,  #33a6cc 50%,#0099cc 50%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33a6cc', endColorstr='#0099cc',GradientType=0 ); /* IE6-9 */
+}
+.btn-primary.gradient:hover, .btn-primary.gradient:focus, .btn-primary.gradient:active, .btn-primary.gradient.active, .open > .dropdown-toggle.btn-primary {
+    background: -moz-linear-gradient(top,  #66b2cc 50%, #33a6cc 50%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#66b2cc), color-stop(50%,#33a6cc)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #66b2cc 50%,#33a6cc 50%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #66b2cc 50%,#33a6cc 50%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #66b2cc 50%,#33a6cc 50%); /* IE10+ */
+    background: linear-gradient(to bottom,  #66b2cc 50%,#33a6cc 50%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66b2cc', endColorstr='#33a6cc',GradientType=0 ); /* IE6-9 */
+}
+.btn-primary.gradient:active, .btn-primary.gradient.active {
+    background: -moz-linear-gradient(top,  #267c99 50%, #007299 50%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#267c99), color-stop(50%,#007299)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #267c99 50%,#007299 50%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #267c99 50%,#007299 50%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #267c99 50%,#007299 50%); /* IE10+ */
+    background: linear-gradient(to bottom,  #267c99 50%,#007299 50%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#267c99', endColorstr='#007299',GradientType=0 ); /* IE6-9 */
+}
+.btn-send.gradient {
+    background: -moz-linear-gradient(top,  #5cb85c 50%, #52a552 50%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#5cb85c), color-stop(50%,#52a552)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #5cb85c 50%,#52a552 50%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #5cb85c 50%,#52a552 50%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #5cb85c 50%,#52a552 50%); /* IE10+ */
+    background: linear-gradient(to bottom,  #5cb85c 50%,#52a552 50%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33a6cc', endColorstr='#0099cc',GradientType=0 ); /* IE6-9 */
+}
+.btn-send.gradient:hover, .btn-send.gradient:focus, .btn-send.gradient:active, .btn-send.gradient.active, .open > .dropdown-toggle.btn-send {
+    background: -moz-linear-gradient(top,  #76D276 50%, #6CBF6C 50%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#76D276), color-stop(50%,#6CBF6C)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #76D276 50%,#6CBF6C 50%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #76D276 50%,#6CBF6C 50%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #76D276 50%,#6CBF6C 50%); /* IE10+ */
+    background: linear-gradient(to bottom,  #76D276 50%,#6CBF6C 50%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66b2cc', endColorstr='#33a6cc',GradientType=0 ); /* IE6-9 */
+}
+.btn-send.gradient:active, .btn-send.gradient.active {
+    background: -moz-linear-gradient(top,  #439F43 50%, #398C39 50%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#439F43), color-stop(50%,#398C39)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #439F43 50%,#398C39 50%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #439F43 50%,#398C39 50%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #439F43 50%,#398C39 50%); /* IE10+ */
+    background: linear-gradient(to bottom,  #439F43 50%,#398C39 50%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#267c99', endColorstr='#007299',GradientType=0 ); /* IE6-9 */
 }

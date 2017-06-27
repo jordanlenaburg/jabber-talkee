@@ -1,6 +1,6 @@
 angular.module("JabberTalkee")
 
-    .controller("navCtrl", ["$scope", "$routeParams", "channelService", function ($scope, $routeParams, channelService) {
+    .controller("navCtrl", ["$scope", "$routeParams", "channelService", "ngToast",function ($scope, $routeParams, channelService, ngToast) {
         $scope.channelList = [];
         $scope.setChannel = function (channel_id) {
           $scope.channel_id = channel_id;
@@ -8,11 +8,17 @@ angular.module("JabberTalkee")
         };
         $scope.createChannel = function (channel) {
             if (!channel.topic){
-                alert("Please provide a channel topic");
+                ngToast.create({
+                    className: 'warning',
+                    content: "Please provide a channel topic!"
+                });
                 return;
             }
             if (!channel.public){
-                alert("Is this channel public or private?");
+                ngToast.create({
+                    className: 'warning',
+                    content: "Is this channel public or private"
+                });
                 return;
             }
             channelService.createChannel(channel)
