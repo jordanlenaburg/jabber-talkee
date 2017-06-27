@@ -13,8 +13,14 @@ var channelSchema = new Schema({
         ref: "User",
         required: true
     },
-    public: Boolean,
-    topic: String,
+    public: {
+        type: Boolean,
+        required: true
+    },
+    topic: {
+        type: String,
+        required: true
+    },
     usersInChannel: [String]
 });
 

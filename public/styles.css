@@ -11,6 +11,10 @@ nav {
     overflow: scroll;
 }
 
+.full-width {
+    width: 50%;
+}
+
 .channel-create {
     background-color: ghostwhite;
 }
