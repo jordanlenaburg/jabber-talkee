@@ -30,7 +30,7 @@ channelRoutes.route("/:id")
     })
     .put(function (req, res) {
         Channel.findOneAndUpdate({
-            user_id: req.user._id,
+            // user_id: req.user._id,
             _id: req.params.id
         }, req.body, {new: true}, function (err, updatedChannel) {
             if (err) return res.status(500).send(err);
