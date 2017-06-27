@@ -1,5 +1,4 @@
 angular.module("JabberTalkee")
-//TODO make it so messages returns all messages from channel, not just from user
     .controller("messageCtrl", ["$scope", "$routeParams", "messageService", function ($scope, $routeParams, messageService) {
 
         $scope.sendMessage = function (message) {
@@ -9,6 +8,7 @@ angular.module("JabberTalkee")
             messageService.sendMessage(message)
                 .then(
                     function (response) {
+                        $scope.message = {};
                         return messageService.getMessages(message.channel_id);
                     }
                 )

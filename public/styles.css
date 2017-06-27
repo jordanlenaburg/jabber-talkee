@@ -11,6 +11,14 @@ nav {
     overflow: scroll;
 }
 
+.full-width {
+    width: 50%;
+}
+
+.channel-create {
+    background-color: ghostwhite;
+}
+
 .box {
     border: solid 2px black;
     width: 99%;

@@ -7,10 +7,10 @@ var Channel = require("../models/channelSchema");
 
 channelRoutes.route("/")
     .get(function (req, res) {
-        Channel.find({user_id: req.user._id}, function (err, channels) {
+        Channel.find({$or: [{user_id: req.user._id}, {usersInChannel: req.user._id}, {public: true}]}, function (err, channels) {
             if (err) return res.status(500).send(err);
             res.send(channels)
-        })
+        });
     })
     .post(function (req, res) {
         var newChannel = new Channel(req.body);
@@ -29,7 +29,10 @@ channelRoutes.route("/:id")
         })
     })
     .put(function (req, res) {
-        Channel.findOneAndUpdate({user_id: req.user._id, _id: req.params.id}, req.body, {new: true}, function (err, updatedChannel) {
+        Channel.findOneAndUpdate({
+            user_id: req.user._id,
+            _id: req.params.id
+        }, req.body, {new: true}, function (err, updatedChannel) {
             if (err) return res.status(500).send(err);
             res.send(updatedChannel)
         })

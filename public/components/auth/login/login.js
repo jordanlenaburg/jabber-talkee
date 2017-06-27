@@ -1,10 +1,10 @@
 angular.module("Auth")
-
-    .controller("LoginCtrl", ["$scope", "$location", "UserService", function ($scope, $location, UserService) {
+    //TODO: add get request of channels after user logs in
+    .controller("LoginCtrl", ["$scope", "UserService", function ($scope, UserService) {
 
         $scope.login = function (user) {
             UserService.login(user).then(function (response) {
-                $location.path("/channel");
+                return response
             }, function (response) {
                 alert(response.data.message);
             });

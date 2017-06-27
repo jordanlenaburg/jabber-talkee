@@ -7,7 +7,7 @@ var Message = require("../models/messageSchema");
 messageRoutes.route("/")
     .get(function (req, res) {
         Message.find(req.query, function (err, messages) {
-            console.log(req);
+            // console.log(req);
             if (err) return res.status(500).send(err);
             res.send(messages)
         })
