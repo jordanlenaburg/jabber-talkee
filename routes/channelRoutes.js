@@ -23,14 +23,17 @@ channelRoutes.route("/")
 
 channelRoutes.route("/:id")
     .get(function (req, res) {
-        Channel.findOne({user_id: req.user._id, _id: req.params.id}, function (err, channel) {
+        Channel.findOne({
+            // user_id: req.user._id,
+            _id: req.params.id
+        }, function (err, channel) {
             if (err) return res.status(500).send(err);
             return res.send(channel)
         })
     })
     .put(function (req, res) {
         Channel.findOneAndUpdate({
-            user_id: req.user._id,
+            // user_id: req.user._id,
             _id: req.params.id
         }, req.body, {new: true}, function (err, updatedChannel) {
             if (err) return res.status(500).send(err);
