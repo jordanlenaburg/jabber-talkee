@@ -7,8 +7,7 @@ var Channel = require("../models/channelSchema");
 
 channelRoutes.route("/")
     .get(function (req, res) {
-        var config = usersInChannel.indexOf(req.user._id) !== -1;
-        Channel.find({user_id: req.user._id || config}, function (err, channels) {
+        Channel.find({ $or: [{user_id: req.user._id}, {usersInChannel: req.user._id}]}, function (err, channels) {
             if (err) return res.status(500).send(err);
             res.send(channels)
         });
