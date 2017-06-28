@@ -64,16 +64,19 @@ angular.module("JabberTalkee")
                         }
                     );
                 // console.log(body);
+            } else {
+                body.addedUser = "";
+                return $http.put("/account/channel/" + id, body)
+                    .then(
+                        function (response) {
+                            return response.data
+                        },
+                        function (response) {
+                            alert("Error " + response.status + ": " + response.statusText)
+                        }
+                    )
             }
-            return $http.put("/account/channel/" + id, body)
-                .then(
-                    function (response) {
-                        return response.data
-                    },
-                    function (response) {
-                        alert("Error " + response.status + ": " + response.statusText)
-                    }
-                )
+
         };
         this.deleteChannel = function () {
             return $http.delete("/account/channel/" + req.params.id)
