@@ -17,6 +17,7 @@ angular.module("JabberTalkee")
             return $http.get("/account/channel/" + id)
                 .then(
                     function (response) {
+                        console.log(response.data);
                         return response.data
                     }
                 )
@@ -48,9 +49,9 @@ angular.module("JabberTalkee")
                                 alert("No such user");
                                 return ""
                             }
-                            console.log(response.data[0]._id);
+                            // console.log(response.data[0]._id);
                             body.addedUser = response.data[0]._id;
-                            console.log(body);
+                            // console.log(body);
                             return $http.put("/account/channel/" + id, body)
                                 .then(
                                     function (response) {
