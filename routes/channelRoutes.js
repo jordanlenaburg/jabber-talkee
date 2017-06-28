@@ -33,12 +33,17 @@ channelRoutes.route("/:id")
     })
     .put(function (req, res) {
         Channel.findOneAndUpdate({
-            // user_id: req.user._id,
-            _id: req.params.id
-        }, req.body, {new: true}, function (err, updatedChannel) {
-            if (err) return res.status(500).send(err);
-            res.send(updatedChannel)
-        })
+                // user_id: req.user._id,
+                _id: req.params.id
+            },
+            {$set:
+            {topic: req.body.topic},
+            $push: {usersInChannel: req.body.addedUser}},
+            {new: true}, function (err, updatedChannel) {
+                if (err) return res.status(500).send(err);
+                console.log(req.body);
+                res.send(updatedChannel)
+            })
     })
     .delete(function (req, res) {
         Channel.findOneAndRemove({user_id: req.user._id, _id: req.params.id}, function (err, deletedChannel) {

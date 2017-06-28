@@ -43,8 +43,13 @@ angular.module("JabberTalkee")
                 return $http.get("account/find", config)
                     .then(
                         function (response) {
+                            // console.log(response);
+                            if (!response.data[0]) {
+                                alert("No such user");
+                                return ""
+                            }
                             console.log(response.data[0]._id);
-                            body.usersInChannel = response.data[0]._id;
+                            body.addedUser = response.data[0]._id;
                             console.log(body);
                             return $http.put("/account/channel/" + id, body)
                                 .then(
