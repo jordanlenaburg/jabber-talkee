@@ -7,7 +7,11 @@ angular.module("JabberTalkee")
             channelService.updateChannel($routeParams.id, channel)
                 .then(
                     function (response) {
-                        $scope.channel = response;
+                        if (response) {
+                            $scope.channel = response;
+                            $scope.channel.usersInChannel = [];
+                        }
+
                     }
                 )
         };

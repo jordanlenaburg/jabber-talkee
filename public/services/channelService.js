@@ -17,6 +17,7 @@ angular.module("JabberTalkee")
             return $http.get("/account/channel/" + id)
                 .then(
                     function (response) {
+                        console.log(response.data);
                         return response.data
                     }
                 )
@@ -43,9 +44,14 @@ angular.module("JabberTalkee")
                 return $http.get("account/find", config)
                     .then(
                         function (response) {
-                            console.log(response.data[0]._id);
-                            body.usersInChannel = response.data[0]._id;
-                            console.log(body);
+                            // console.log(response);
+                            if (!response.data[0]) {
+                                alert("No such user");
+                                return ""
+                            }
+                            // console.log(response.data[0]._id);
+                            body.addedUser = response.data[0]._id;
+                            // console.log(body);
                             return $http.put("/account/channel/" + id, body)
                                 .then(
                                     function (response) {
@@ -58,16 +64,19 @@ angular.module("JabberTalkee")
                         }
                     );
                 // console.log(body);
+            } else {
+                body.addedUser = "";
+                return $http.put("/account/channel/" + id, body)
+                    .then(
+                        function (response) {
+                            return response.data
+                        },
+                        function (response) {
+                            alert("Error " + response.status + ": " + response.statusText)
+                        }
+                    )
             }
-            return $http.put("/account/channel/" + id, body)
-                .then(
-                    function (response) {
-                        return response.data
-                    },
-                    function (response) {
-                        alert("Error " + response.status + ": " + response.statusText)
-                    }
-                )
+
         };
         this.deleteChannel = function () {
             return $http.delete("/account/channel/" + req.params.id)

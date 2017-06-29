@@ -15,16 +15,15 @@ var messageSchema = new Schema({
         ref: "User",
         required: true
     },
+    // username: {
+    //     type: String,
+    //     required: true
+    // },
     channel_id: {
         type: String,
         required: true
     },
     application: String,
-    // directRecipients_id: [{
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: "User",
-    //     required: true
-    // }],
     text: {
         type: String,
         required: true

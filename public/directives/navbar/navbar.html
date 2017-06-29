@@ -2,7 +2,7 @@
         <ul class="nav nav-stacked">
             <li role="presentation" class="text-center"><a href='#!/home'><span class="glyphicon glyphicon-home"></span></a></li>
             <li role="presentation" class="text-center channel-create">
-                <input type="text" placeholder="Channel Topic" ng-model="channel.topic" class="text-center"><br>
+                <input type="text" placeholder="Channel Topic" ng-model="channel.topic" maxlength="20" class="text-center"><br>
                 <input class="radioNav" type="radio" ng-model="channel.public" value="true"> Public
                 <input class="radioNav" type="radio" ng-model="channel.public" value="false"> Private
                 <button class="btn btn-primary btn-info btn-sm gradient channelBtn" ng-click="createChannel(channel)">Create a channel</button>

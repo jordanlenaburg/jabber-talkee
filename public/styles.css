@@ -9,8 +9,14 @@ body {
 
 nav {
     width: 15%;
-    height: 100vh;
+    height: calc(100vh - 0px);
     overflow: scroll;
+}
+
+.content {
+    position: relative;
+    min-height: calc(100vh - 0px);
+    width: 99%;
 }
 
 .full-width {
@@ -70,10 +76,7 @@ nav {
     color: ghostwhite;
 }
 
-.content {
-    position: relative;
-    min-height: calc(100vh - 0px);
-}
+
 
 .btn-send {
     margin-top: 12px;
