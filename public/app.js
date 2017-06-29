@@ -4,8 +4,8 @@ app.config(["$routeProvider", function ($routeProvider) {
 
     $routeProvider
         .when("/home", {
-            templateUrl: "components/home/home.html"
-            // controller: ""
+            templateUrl: "components/home/home.html",
+            controller: "homeCtrl"
         })
         .when("/chat", {
             templateUrl: "",

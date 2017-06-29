@@ -1,6 +1,7 @@
 angular.module("JabberTalkee")
 
-    .controller("navCtrl", ["$scope", "$routeParams", "channelService", "ngToast",function ($scope, $routeParams, channelService, ngToast) {
+    .controller("navCtrl", ["$scope", "$routeParams", "$interval", "$localStorage", "channelService", "ngToast",
+        function ($scope, $routeParams, $interval, $localStorage, channelService, ngToast) {
         $scope.channelList = [];
         $scope.setChannel = function (channel_id) {
           $scope.channel_id = channel_id;
@@ -35,13 +36,22 @@ angular.module("JabberTalkee")
                     }
                 );
         };
-        channelService.getRequest()
-            .then(
-                function (response) {
-                    $scope.channelList = response;
-                    // console.log($scope.channelList);
-                    return response
-                }
-            )
+        var getChannels = function () {
+            if ($localStorage.token) {
+                channelService.getRequest()
+                    .then(
+                        function (response) {
+                            $scope.channelList = response;
+                            // console.log($scope.channelList);
+                            return response
+                        }
+                    );
+            } else {
+                $scope.channelList = [];
+                return
+            }
+        };
+        $interval(getChannels, 500);
+
     }])
 ;

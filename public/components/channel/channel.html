@@ -1,8 +1,9 @@
 <!--TODO: need input for deleting a channel-->
-<div class="row">
+<div class="row view" id="data">
     <div class="col-xs-10">
         <div class="row">
             <div class="col-xs-7">
+                <h5>Welcome to JabberTalkee. You are logged in as: "{{ loggedInUser.username }}"</h5>
             </div>
             <div class="col-xs-3">
                 <h5>Channel Topic:
@@ -22,7 +23,7 @@
         </div>
         <div class="row">
             <div class="col-xs-12">
-                <p ng-repeat="message in channelMessages">{{ message.text }}</p>
+                <p ng-repeat="message in channelMessages">{{ message.username }}: {{ message.text }}</p>
             </div>
         </div>
     </div>
