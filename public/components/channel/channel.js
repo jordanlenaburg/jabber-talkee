@@ -4,7 +4,7 @@ angular.module("JabberTalkee")
         function ($scope, $interval, $routeParams, $localStorage, channelService, findUserService, messageService) {
             $scope.channelMessages = [];
             $scope.channel = {};
-            $scope.loggedInUser;
+            $scope.loggedInUser = {};
             findUserService.findUser()
                 .then(
                     function (response) {
