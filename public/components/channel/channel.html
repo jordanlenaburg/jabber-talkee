@@ -1,45 +1,50 @@
 <!--TODO: need input for deleting a channel-->
 <div class="row view" id="data">
-  <div class="col-xs-10">
-    <div class="row">
-      <div class="col-xs-7">
-        <h5>Welcome to JabberTalkee. You are logged in as: "{{ loggedInUser.username }}"</h5>
-      </div>
-      <div class="col-xs-2 col-xs-offset-3">
-      <button type="button" class="btn btn-primary gradient modal-btn" data-toggle="modal" data-target="#myModal">
-              Change Topic or Invite Users
-            </button>
+    <div class="col-xs-10">
+        <div class="row">
+            <div class="col-xs-7">
+                <h5>Welcome to JabberTalkee. You are logged in as: "{{ loggedInUser.username }}"</h5>
+            </div>
+            <div class="col-xs-2 col-xs-offset-2">
+                <button type="button" class="btn btn-primary gradient modal-btn" data-toggle="modal"
+                        data-target="#myModal">
+                    Change Topic or Invite Users
+                </button>
 
-      <!-- Modal -->
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">Change Topic or Invite Users</h4>
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Change Topic or Invite Users</h4>
+                            </div>
+                            <div class="modal-body">
+                                <h5>Channel Topic:
+                                    <small><input type="text" ng-model="channel.topic" maxlength="20"
+                                                  class="full-width"></small>
+                                </h5>
+                                <h5>Add user:
+                                    <small><input type="text" ng-model="channel.addedUser" class="full-width"
+                                                  placeholder="Enter username here">
+                                    </small>
+                                </h5>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary btn-info gradient"
+                                        ng-click="updateChannel(channel)" data-dismiss="modal">Save changes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="modal-body">
-              <h5>Channel Topic:
-                        <small><input type="text" ng-model="channel.topic" maxlength="20" class="full-width"></small>
-                    </h5>
-              <h5>Add user:
-                        <small><input type="text" ng-model="channel.addedUser" class="full-width"
-                                      placeholder="Enter username here">
-                        </small>
-                    </h5>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary btn-info gradient" ng-click="updateChannel(channel)" data-dismiss="modal">Save changes</button>
-            </div>
-          </div>
         </div>
-      </div>
-</div>
+        <div class="row">
+            <div class="col-xs-12">
+                <p ng-repeat="message in channelMessages">{{ message.username }}: {{ message.text }}</p>
+            </div>
+        </div>
     </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <p ng-repeat="message in channelMessages">{{ message.username }}: {{ message.text }}</p>
-      </div>
-    </div>
-  </div>
 </div>
