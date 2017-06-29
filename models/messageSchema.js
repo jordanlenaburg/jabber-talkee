@@ -15,10 +15,10 @@ var messageSchema = new Schema({
         ref: "User",
         required: true
     },
-    // username: {
-    //     type: String,
-    //     required: true
-    // },
+    username: {
+        type: String,
+        required: true
+    },
     channel_id: {
         type: String,
         required: true

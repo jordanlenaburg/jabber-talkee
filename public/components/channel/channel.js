@@ -1,32 +1,50 @@
 angular.module("JabberTalkee")
 
-    .controller("channelCtrl", ["$scope", "$routeParams", "channelService", "messageService", function ($scope, $routeParams, channelService, messageService) {
-        $scope.channelMessages = [];
-        $scope.channel = {};
-        $scope.updateChannel = function (channel) {
-            channelService.updateChannel($routeParams.id, channel)
+    .controller("channelCtrl", ["$scope", "$interval", "$routeParams", "$localStorage", "channelService", "findUserService", "messageService",
+        function ($scope, $interval, $routeParams, $localStorage, channelService, findUserService, messageService) {
+            $scope.channelMessages = [];
+            $scope.channel = {};
+            $scope.loggedInUser;
+            findUserService.findUser()
                 .then(
                     function (response) {
-                        if (response) {
-                            $scope.channel = response;
-                            $scope.channel.usersInChannel = [];
-                        }
-
+                        // console.log(response);
+                        $scope.loggedInUser = response
                     }
-                )
-        };
-        channelService.getOneChannel($routeParams.id)
-            .then(
-                function (response) {
-                    $scope.channel = response;
-                    // console.log(response)
+                );
+            $scope.updateChannel = function (channel) {
+                channelService.updateChannel($routeParams.id, channel)
+                    .then(
+                        function (response) {
+                            if (response) {
+                                $scope.channel = response;
+                                $scope.channel.usersInChannel = [];
+                            }
+
+                        }
+                    )
+            };
+            channelService.getOneChannel($routeParams.id)
+                .then(
+                    function (response) {
+                        $scope.channel = response;
+                        // console.log(response)
+                    }
+                );
+            var getMessages = function () {
+                if ($localStorage.token) {
+                    messageService.getMessages($routeParams.id)
+                        .then(
+                            function (response) {
+                                $scope.channelMessages = response.data
+                            }
+                        );
+                    var elem = document.getElementById('data');
+                    elem.scrollTop = elem.scrollHeight;
+                } else {
+                    return
                 }
-            );
-        messageService.getMessages($routeParams.id)
-            .then(
-                function (response) {
-                    $scope.channelMessages = response.data
-                }
-            )
-    }])
+            };
+            $interval(getMessages, 500);
+        }])
 ;

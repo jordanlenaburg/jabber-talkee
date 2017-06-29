@@ -1,8 +1,11 @@
 <div class="row message-input">
-    <div class="col-xs-11">
-        <textarea rows="2" class="messages" placeholder="Say it!" ng-model="message.text"></textarea>
-    </div>
-    <div class="col-xs-1">
-        <button class="btn btn-send btn-success gradient" ng-click="sendMessage(message)">Send</button>
-    </div>
+    <form action="">
+        <div class="col-xs-11">
+            <input rows="2" class="messages" placeholder="Say it!" ng-model="message.text"></input>
+        </div>
+        <div class="col-xs-1">
+            <button class="btn btn-send btn-success gradient" ng-click="sendMessage(message, loggedInUser)">Send
+            </button>
+        </div>
+    </form>
 </div>

@@ -23,6 +23,11 @@ nav {
     width: 50%;
 }
 
+.view {
+    height: 85vh;
+    overflow: scroll;
+}
+
 .channel-create {
     background-color: #222;
     color: #337ab7;
