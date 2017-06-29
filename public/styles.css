@@ -84,14 +84,17 @@ nav {
 
 
 .btn-send {
-    margin-top: 12px;
+    margin-top: 5px;
 }
 
 .radioNav {
     margin-top:5px;
     margin-bottom: 5px;
 }
-
+.modal-btn{
+  margin-top: 5px;
+  margin-left: 40px;
+}
 .btn-primary {
     background: #0099cc;
     color: #ffffff;
