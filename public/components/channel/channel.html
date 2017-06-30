@@ -2,7 +2,7 @@
 <div>
     <div class="row view" id="data">
         <div class="col-xs-10">
-            <div class="row">
+            <div class="row change-channel">
                 <div class="col-xs-7">
                     <h5>Welcome to JabberTalkee. You are logged in as: "{{ loggedInUser.username }}"</h5>
                 </div>
@@ -45,7 +45,7 @@
         </div>
         <div class="row">
             <div class="col-xs-12">
-                <p ng-repeat="message in channelMessages">{{ message.username }}: {{ message.text }}</p>
+                <p ng-repeat="message in channelMessages">...{{ message.username }}: {{ message.text }}</p>
             </div>
         </div>
     </div>
