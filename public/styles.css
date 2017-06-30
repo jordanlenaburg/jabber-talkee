@@ -102,6 +102,15 @@ nav {
   margin-top: 5px;
   margin-left: 40px;
 }
+
+.modal-backdrop {
+    z-index: 0;
+}
+
+.margin-bottom {
+    margin-bottom: 50px;
+}
+
 .btn-primary {
     background: #0099cc;
     color: #ffffff;
