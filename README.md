@@ -1,1 +1,1 @@
-Full Stack application for messaging
+Full Stack chat application for messaging.
